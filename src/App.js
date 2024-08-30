@@ -3,6 +3,7 @@ import LoginForm from './LoginForm';
 import React from 'react';
 import { useState } from 'react';
 import DashBoard from './DashBoard';
+import UpperAppBar from './UpperAppBar';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <UpperAppBar loggedIn={loggedIn} toggleLogin={toggleLogin}></UpperAppBar>
         {loggedIn ? 
         <div> 
           <DashBoard></DashBoard>

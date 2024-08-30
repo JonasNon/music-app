@@ -21,18 +21,9 @@ const PinkSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-
 
 export default function OnlineCard(props) {
-  const {setIsOffline} = props
+  const {toggleIsOffline} = props
 
   return (
     <Card sx={{ width: '20vw', height: '25vh' }}>
@@ -46,7 +37,7 @@ export default function OnlineCard(props) {
         </Typography>
       </CardContent>
       <CardActions sx={{position: 'relative'}}>
-        <PinkSwitch  sx={{margin: '5vh',position: 'absolute', left: '-2vw', top: '-2vh'}} defaultChecked />
+        <PinkSwitch  sx={{margin: '5vh',position: 'absolute', left: '-2vw', top: '-2vh'}} defaultChecked onChange={toggleIsOffline} />
       </CardActions>
     </Card>
   );
