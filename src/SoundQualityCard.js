@@ -35,6 +35,7 @@ export default function soundQualityCard(props) {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={soundQuality}
+              defaultValue={"medium"}
               label="Age"
               onChange={handleQualityChange}
             >

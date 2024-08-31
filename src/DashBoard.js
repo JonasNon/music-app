@@ -32,7 +32,7 @@ function DashBoard () {
     if (newValue >= 80 && isTooLoud == false) {
       setIsTooLoud(true)
       toggleNotification("Listening to music at a high volume could cause long-term hearing loss.")
-    } else if (isTooLoud == true) {
+    } else if (newValue < 80 && isTooLoud == true) {
       setIsTooLoud(false)
       toggleNotification("Listening to music at a high volume could cause long-term hearing loss.")
     }
@@ -73,8 +73,11 @@ function DashBoard () {
         <VolumeCard handleVolumeChange={handleVolumeChange}></VolumeCard>
         <SoundQualityCard handleQualityChange={handleQualityChange}></SoundQualityCard>
       </div>
-      <h3 style={{color: "white"}}>Notifications</h3>
-      <button style={{width: '10vw', height: '10vw'}} onClick={() => {console.log(notifications)}}></button>
+      <h3 style={{color: "white", fontSize: 30, margin: 0, outline: "5px solid white", borderRadius: "5%", padding: "1vw", backgroundColor: "purple"}}>System Notifications:</h3>
+      {notifications.map((string, index) => {
+        return <li key={index}>! {string} !</li>
+      })}
+      {/* <button style={{width: '10vw', height: '10vw'}} onClick={() => {console.log(notifications)}}></button> */}
     </div>
 
   )
