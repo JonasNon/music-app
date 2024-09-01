@@ -1,9 +1,9 @@
 import './App.css';
-import LoginForm from './LoginForm';
 import React from 'react';
 import { useState } from 'react';
-import DashBoard from './DashBoard';
-import UpperAppBar from './UpperAppBar';
+import LoginForm from './components/LoginForm';
+import DashBoard from './components/DashBoard';
+import UpperAppBar from './components/UpperAppBar';
 
 function App() {
 
