@@ -6,7 +6,8 @@ import OnlineCard from './OnlineCard'
 import VolumeCard from './VolumeCard'
 import SoundQualityCard from "./SoundQualityCard";
 
-function DashBoard () {
+function DashBoard (props) {
+  const {username} = props
 
   const [isOffline, setIsOffline] = useState(false)
   const [volumeLevel, setVolume] = useState(0)
@@ -67,17 +68,16 @@ function DashBoard () {
 
   return (
     <div id="main">
-      <h1>Welcome User!</h1>
+      <h1>Welcome {username == "" ? "User" : username}!</h1>
       <div id="cards">
         <OnlineCard toggleIsOffline={toggleIsOffline}></OnlineCard>
         <VolumeCard handleVolumeChange={handleVolumeChange}></VolumeCard>
         <SoundQualityCard handleQualityChange={handleQualityChange}></SoundQualityCard>
       </div>
-      <h3 style={{color: "white", fontSize: 30, margin: 0, outline: "5px solid white", borderRadius: "5%", padding: "1vw", backgroundColor: "purple"}}>System Notifications:</h3>
+      <h3 style={{color: 'whitesmoke', fontSize: 30, margin: 0, outline: "5px solid white", borderRadius: "5%", padding: "1vw", backgroundColor: "#1976D2"}}>System Notifications:</h3>
       {notifications.map((string, index) => {
         return <li key={index}>! {string} !</li>
       })}
-      {/* <button style={{width: '10vw', height: '10vw'}} onClick={() => {console.log(notifications)}}></button> */}
     </div>
 
   )

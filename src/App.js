@@ -8,6 +8,12 @@ import UpperAppBar from './UpperAppBar';
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false)
+  const [username, setUsername] = useState("")
+
+  const handleUsernameInput = (event) => {
+    setUsername(event.target.value)
+  }
+
 
   const toggleLogin = () => {
     loggedIn ? setLoggedIn(false) : setLoggedIn(true)
@@ -19,9 +25,9 @@ function App() {
       <UpperAppBar loggedIn={loggedIn} toggleLogin={toggleLogin}></UpperAppBar>
         {loggedIn ? 
         <div> 
-          <DashBoard></DashBoard>
+          <DashBoard username={username}></DashBoard>
         </div> :
-        <LoginForm toggleLogin={toggleLogin}></LoginForm>
+        <LoginForm username={username} handleUsernameInput={handleUsernameInput} toggleLogin={toggleLogin}></LoginForm>
 
       }
     </div>

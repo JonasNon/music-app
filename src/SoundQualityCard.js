@@ -10,9 +10,6 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-
-
-
 export default function soundQualityCard(props) {
   const {handleQualityChange, soundQuality} = props
 

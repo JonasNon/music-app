@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 
 export default function LoginForm(props) {
-  const {toggleLogin} = props
+  const {toggleLogin, handleUsernameInput, username} = props
 
   return (
     <Box
@@ -15,7 +15,7 @@ export default function LoginForm(props) {
       autoComplete="off"
     >
       <div sx={{display: 'flex', flexDirection: 'column', width: "20vw", justifyContent: 'centered', alignItems: "centered"}}>
-        <TextField id="standard-basic" label="Username" variant="standard" />
+        <TextField id="standard-basic" label="Username" variant="standard" onChange={handleUsernameInput} value={username} />
         <TextField  id="standard-basic" label="Password" variant="standard" />
         <Button sx={{margin: '3vh'}} onClick={toggleLogin} variant="outlined">Log In</Button>
       </div>  

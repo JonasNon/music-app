@@ -3,7 +3,7 @@
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  background-color: rgb(56, 28, 84);
+  background-color: white;
   padding-bottom: 10vh;
 }
 
@@ -14,12 +14,12 @@
   height: 91vh;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgb(56, 28, 84);
+  background-color: white ;
   overflow: hidden;
 }
 
 h1 {
-  color: whitesmoke;
+  color: #1976D2;
   width: 100vw;
   text-align: start;
   padding-left: 13vw;
@@ -32,8 +32,9 @@ h1 {
 }
 
 li {
-  color: whitesmoke;
+  color: black;
   list-style-type: none;
   font-size: large;
+  font-weight: 500;
   margin: 2vh;
 }
